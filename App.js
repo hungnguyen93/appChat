@@ -8,13 +8,11 @@ import { Actions, Scene, Router } from 'react-native-router-flux';
 export default class App extends Component {
   render() {
     return (
-    // <Router scenes={scenes}>
-    // <LogIn></LogIn>
-    // </Router>
-   //<Resgister/>
-    //<ResgisterDone></ResgisterDone>
-    //<Te/>
-    <Chat1/>
+    <Router scenes={scenes}>
+    <LogIn></LogIn>
+    </Router>
+   
+   // <Chat1/>
     );
   }
 }
