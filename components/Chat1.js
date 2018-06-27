@@ -21,7 +21,9 @@ export default class Chat1 extends Component {
         super(props);
         this.itemRef = firebaseApp.database();
         this.renderItem = ({ item }) => {
-            return <Text>{item.message}</Text>
+            return <View style={styles.mes}>
+                <Text style={{ margin: 10, }}>{item.message}</Text>
+            </View>
         }
         this.state = {
             txtMe: '', dataMS: []
@@ -93,7 +95,7 @@ export default class Chat1 extends Component {
                     style={styles.chat}
                 >
                 </FlatList>
-                <View style={{width:width(100), height:height(0.1), backgroundColor:'gray'}}/>
+                <View style={{ width: width(100), height: height(0.1), backgroundColor: 'gray' }} />
                 <View style={styles.chat1}>
                     <TextInput style={styles.textInput}
                         onChangeText={(text) => this.setState({ txtMe: text })}
@@ -120,10 +122,11 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'flex-end',
         // alignItems: 'center',
-       marginTop: 30,
+        marginTop: 30,
+        
     },
     textInput: {
-        fontSize:15,
+        fontSize: 15,
         width: width(90),
         height: height(6),
         paddingHorizontal: 10,
@@ -137,20 +140,26 @@ const styles = StyleSheet.create({
     chat: {
         backgroundColor: 'white',
         width: width(100),
-       // marginTop:30
-       paddingVertical:10,
-       
+        // marginTop:30
+        paddingVertical: 10,
+
     },
     chat1: {
         marginTop: 1,
         flexDirection: 'row',
         backgroundColor: 'white',
-        
+
 
 
     },
     icSent: {
         width: width(10),
         height: height(6),
+    },
+    mes:{
+        backgroundColor: '#BFBFBF', 
+        marginBottom:10, 
+        marginLeft:5, 
+        marginRight:5
     }
 });
